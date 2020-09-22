@@ -9,6 +9,8 @@ import { Tarea } from '../Tarea';
 })
 export class TareasComponent{
 
+  fecha = Date();
+
   tareas: Tarea[] = [
     {
       Nombre: "Primer tarea.",
