@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body{
+    background-image: url(assets/3254309.jpg);
+    background-repeat: no-repeat;
+}
+
+h2{
+    margin: 20px;
+}
+
+.card{
+    padding: 15px;
+    margin: 10px;
+}

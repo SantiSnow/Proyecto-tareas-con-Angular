@@ -1,0 +1,11 @@
+
+.botones-tareas{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#tarea-cumplida{
+    background-color: cornflowerblue;
+    padding: 2px;
+    border-radius: 3px;
+}

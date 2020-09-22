@@ -1,0 +1,57 @@
+<h2>¡Bienvenido a su gestor de tareas!</h2>
+<p>Aquí puede ingresar, ver y gestionar las tareas que tiene. Utilice el formulario para ingresar nuevas tareas, y visualice sus tareas pendientes en la lista.
+    Si desea borrar alguna tarea, haga click en el ícono para borrarlas. Si ha completado una tarea, haga click en el tilde para que se almacene como finalizada.
+    Las tareas se borraran al salir de la aplicación.
+</p>
+<div class="row">
+    <div class="col-md-8">
+        <form class="form-group" (submit)="agregarTarea(Nombre, Descripcion, FechaLimite, Importancia, NombreSolicitante, Contacto)">
+    
+            <label for="Nombre">Nombre:</label>
+            <input type="text" name="Nombre" class="form-control" placeholder="Nombre de la tarea..." required #Nombre />
+            <br />
+    
+            <label for="Descripcion">Descripción:</label>
+            <input type="text" name="Descripcion" class="form-control" placeholder="Descripción de la tarea..." required #Descripcion />
+            <br />
+    
+            <label for="FechaLimite">Fecha Límite:</label>
+            <input type="date" name="FechaLimite" class="form-control" placeholder="Fecha de entrega..." required #FechaLimite />
+            <br />
+    
+            <label for="Importancia:">Nivel de importancia:</label>
+            <select class="custom-select form-control" name="Importancia" required #Importancia>
+                <option value="Postergable">Postergable</option>
+                <option value="Regular">Regular</option>
+                <option value="Importante">Importante</option>
+            </select>
+            <br />
+            <br />
+    
+            <label for="NombreSolicitante">Solicitante:</label>
+            <input type="text" name="NombreSolicitante" class="form-control" placeholder="Nombre de quien lo solicita..." required #NombreSolicitante />
+            <br />
+    
+            <label for="Contacto">Contacto del solicitante:</label>
+            <input type="text" name="Contacto" class="form-control" placeholder="Numero o correo del solicitante" required #Contacto />
+            <br />
+    
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center" *ngFor="let i of tareas">
+            <h4>{{ i.Nombre }}</h4>
+            <p>{{ i.Descripcion }}</p>
+            <p>Fecha Limite: {{ i.FechaLimite }}</p>
+            <p>Importancia: {{ i.Importancia }}</p>
+            <p>Nombre solicitante: {{ i.Solicitante.NombreSolicitante }} </p>
+            <p>Contacto: {{ i.Solicitante.Contacto }} </p>
+            <p id="tarea-cumplida" *ngIf="i.Entregada">La tarea fue cumplida. ¡Buen Trabajo!</p>
+                <div class="card-footer text-muted">
+                    <img src="../../assets/basurero.png" alt="boton de borrar tarea" class="botones-tareas" width="10%" (click)="eliminaTarea(i)">
+                    <img src="../../assets/tilde.png" alt="boton de tarea lista" class="botones-tareas" width="10%" (click)="tareaCumplida(i)">
+                </div>
+        </div>
+    </div>
+</div>

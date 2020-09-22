@@ -1,0 +1,13 @@
+<h2>Todas sus tareas</h2>
+<p>Aquí se listan las tareas que ya agregó:</p>
+<div class="col-md-6">
+    <div class="card text-center" *ngFor="let i of dataService.tareas">
+        <h4>{{ i.Nombre }}</h4>
+            <p>{{ i.Descripcion }}</p>
+            <p>Fecha Limite: {{ i.FechaLimite }}</p>
+            <p>Importancia: {{ i.Importancia }}</p>
+            <p>Nombre solicitante: {{ i.Solicitante.NombreSolicitante }} </p>
+            <p>Contacto: {{ i.Solicitante.Contacto }} </p>
+            <p id="tarea-cumplida" *ngIf="i.Entregada">La tarea fue cumplida. ¡Buen Trabajo!</p>
+    </div>
+</div>
