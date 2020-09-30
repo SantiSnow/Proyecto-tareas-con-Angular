@@ -1,4 +1,4 @@
-# AngularAppNav
+# Angular App - Gestion de Tareas
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
